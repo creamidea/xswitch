@@ -1,12 +1,12 @@
-import { ViewController, observable, inject } from '@ali/recore';
+import { ViewController, observable } from '@recore/fx';
 import { Checkbox } from 'antd';
 import { getOptions, setOptions } from '../../chrome-storage';
 import { Enabled } from '../../enums';
 import './options.less';
-@inject({
-  components: { Checkbox },
-})
+
 export default class Options extends ViewController {
+  static components = { Checkbox };
+
   @observable
   clearCacheEnabled = false;
 

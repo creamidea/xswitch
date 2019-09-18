@@ -1,4 +1,4 @@
-import { ViewController, observable, inject } from '@ali/recore';
+import { ViewController, observable } from '@recore/fx';
 import { Switch, Icon, Checkbox, Input, Popconfirm, Button, message } from 'antd';
 
 import './xswitch.less';
@@ -34,10 +34,10 @@ import {
 import { getEditorConfig } from '../../editor-config';
 
 let editor: any;
-@inject({
-  components: { Switch, Icon, Checkbox, Input, Popconfirm, Button, message },
-})
+
 export default class XSwitch extends ViewController {
+  static components = { Switch, Icon, Checkbox, Input, Popconfirm, Button, message };
+
   @observable
   checked = true;
 

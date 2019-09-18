@@ -8,8 +8,9 @@
   },
   "scripts": {
     "start": "nowa2 start",
-    "build": "nowa2 build && cp -rf images lib XSwitch.html options.html manifest.json build",
+    "build": "nowa2 build && npm run copy-resource",
     "pub": "npm run build && npm t && sh pub.sh",
+    "copy-resource": "cp -rf images lib XSwitch.html options.html manifest.json build/ && cp ./node_modules/@recore/fx/umd/* build/lib/recore/",
     "test": "jest",
     "ci": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
@@ -65,6 +66,6 @@
     ]
   },
   "nowa": {
-    "solution": "@ali/nowa-recore-solution"
+    "solution": "@recore/solution"
   }
 }
